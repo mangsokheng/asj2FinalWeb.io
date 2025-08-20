@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ddd;
+}
+
+/* Header/Nav Styles */
+header {
+  background: #f8faf6;
+  box-shadow: 0 2px 8px #0001;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1em 2em;
+}
+.logo h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #2e7d4f;
+  font-size: 2em;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  margin: 0;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #2e7d4f;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+  background: #e0f2e9;
+  color: #1b4d2e;
+}
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    margin-top: 1em;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #e0f2e9 0%, #f8faf6 100%);
+  overflow: hidden;
+  margin-bottom: 2em;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 24px #0001;
+}
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+  opacity: 0.18;
+  z-index: 1;
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #2e7d4f;
+  padding: 2em 1em;
+  background: rgba(255,255,255,0.7);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0001;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.hero-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.hero-text .highlight {
+  color: #388e5c;
+  font-style: italic;
+}
+.hero-subtitle {
+  font-size: 1.3em;
+  margin-bottom: 1.5em;
+  color: #4e6e5d;
+  font-weight: 400;
+}
+.cta-button {
+  display: inline-block;
+  background: #2e7d4f;
+  color: #fff;
+  padding: 0.8em 2em;
+  border-radius: 32px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, transform 0.2s;
+}
+.cta-button:hover, .cta-button:focus {
+  background: #388e5c;
+  transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 700px) {
+  .hero-text h2 { font-size: 1.5em; }
+  .hero { min-height: 35vh; }
+  .hero-text { padding: 1em 0.5em; }
+}
+
+/* Modern Cafe Menu Styles */
+.menu {
+  max-width: 900px;
+  margin: 2em auto;
+  background: #f8faf6;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 2.5em 2em 2em 2em;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+}
+.menu-title {
+  font-size: 2.5em;
+  color: #2e7d4f;
+  letter-spacing: 2px;
+  margin-bottom: 1.5em;
+}
+.menu-tabs {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.tab-link {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  margin: 0 1em;
+  padding: 0.5em 1em;
+  color: #2e7d4f;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s;
+}
+.tab-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #2e7d4f;
+}
+.menu-columns {
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+.menu-columns > div {
+  min-width: 220px;
+  flex: 1 1 220px;
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 1.1em;
+  border-bottom: 1px dotted #b2b2b2;
+}
+.menu-item:last-child {
+  border-bottom: none;
+}
+.menu-item small {
+  font-size: 0.9em;
+  color: #2e7d4f;
+}
+.menu-heading {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #388e5c;
+  font-size: 1.15em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #e0f2e9;
+  padding-bottom: 0.2em;
+}
+.tab-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #2e7d4f;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #b2b2b2;
+  padding-bottom: 0.2em;
+}
+@media (max-width: 900px) {
+  .menu-columns {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  .menu {
+    padding: 1em;
+  }
+}
+
+/* About Section */
+.about {
+  padding: 60px 20px 50px 20px;
+  background: linear-gradient(120deg, #f8faf6 60%, #e0f2e9 100%);
+  text-align: center;
+  border-radius: 24px;
+  box-shadow: 0 2px 16px #0001;
+  max-width: 800px;
+  margin: 2em auto 0 auto;
+}
+
+.about h2 {
+  margin-bottom: 24px;
+  font-size: 2.5em;
+  color: #2e7d4f;
+  letter-spacing: 1px;
+}
+
+.about p {
+  font-size: 1.2em;
+  color: #4e6e5d;
+  max-width: 600px;
+  margin: 0 auto 1.5em auto;
+  line-height: 1.7;
+}
+
+.about .about-highlight {
+  color: #388e5c;
+  font-weight: 600;
+  font-style: italic;
+  background: #e0f2e9;
+  padding: 0.1em 0.4em;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .about {
+    padding: 30px 10px 25px 10px;
+    border-radius: 16px;
+  }
+  .about h2 {
+    font-size: 1.5em;
+  }
+  .about p {
+    font-size: 1em;
+  }
+}
+
+/* Contact Section */
+.contact {
+  padding: 60px 20px 50px 20px;
+  background: linear-gradient(120deg, #e0f2e9 0%, #f8faf6 100%);
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 2px 16px #0001;
+  max-width: 700px;
+  margin: 2em auto 0 auto;
+}
+
+.contact h2 {
+  margin-bottom: 24px;
+  font-size: 2.5em;
+  color: #2e7d4f;
+  letter-spacing: 1px;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #b2b2b2;
+  border-radius: 8px;
+  font-size: 1em;
+  background: #fff;
+  transition: border 0.2s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #2e7d4f;
+  outline: none;
+}
+
+.contact button {
+  background: #2e7d4f;
+  color: #fff;
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 32px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact button:hover,
+.contact button:focus {
+  background: #388e5c;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      margin: 2rem;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .breadcrumb span {
+      font-weight: normal;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.25rem;
+      margin-bottom: 2rem;
+    }
+    .tea-menu {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .tea-item {
+      text-align: center;
+      max-width: 150px;
+    }
+    .tea-image {
+      background-color: #14382b;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgb(20 56 43 / 0.3);
+    }
+    .tea-image img {
+      width: 90%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .tea-name {
+      margin-top: 0.75rem;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      color: #222;
+    }
+    @media (max-width: 600px) {
+      .tea-menu {
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      .tea-item {
+        max-width: 120px;
+        font-size: 0.9rem;
+      }
+      .tea-image {
+        width: 120px;
+        height: 120px;
+      }
+    }
